@@ -1,40 +1,24 @@
-package boletin2;
+package Problemas3;
 
 import java.util.Scanner;
 
 public class Ejercicio3 {
+	public static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int num;
+        int i = 0;
+        int numGuardado = 0;
+
+        System.out.println("Introduce un número para saber cuantas cifras tienes : ");
+        num = Integer.parseInt(sc.nextLine());
+        numGuardado = num;
+        while(num != 0){
+                num = num/10;
+                i++;
+        }
+        System.out.println("El número introducido " + numGuardado + " tiene : " + i + " cifras ");
 	
-	private static Scanner teclado = new Scanner(System.in);
-
-	public static void main(String[] args) {
-		
-		int contador = 0;
-		int numeroIntroducido = 0;
-		
-		
-		do {
-			
-			System.out.println("¿Cuantos números vas a introducir");
-			contador = Integer.parseInt(teclado.nextLine());
-			
-			if (contador <= 0) {
-				System.out.println("No puedes introducir 0 o valores negativos");
-			}
-			
-		} while (contador <= 0);
-		
-		for (int i = 0; i < contador; i++) {
-			
-			System.out.println("Introduzca su " + i + " numero: ");
-			numeroIntroducido = Integer.parseInt(teclado.nextLine());
-			
-			if (numeroIntroducido % 2 == 0) {
-				System.out.println("El número es par");
-			}else {
-				System.out.println("El número es impar");
-			}
-		}
-		
-	}
-
+    }
 }
