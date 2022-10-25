@@ -2,44 +2,30 @@ package Arrays1;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ejercicio5 {
-	public static final int NUM_INICIAL = 0;
-	public static final int NUM_FINAL = 10;
-	public static final int NUM_ENCON = 2;
-	public static void main(String[] args) {
+
+		public static Scanner sc = new 	Scanner(System.in);
+	
+		public static final int NUM_FINAL = 1000;
 		
-	//Variables
-	Random aleatorio;
-	aleatorio = new Random();
-	
-	int[] numeros;
-	numeros = new int [10];
-	
-	//Codigo
-	for (int i = 0; i < numeros.length; i++) {
-	numeros[i] =aleatorio.nextInt(NUM_FINAL);
-	}
-	
-	// %d numeros enteros
-	// %f numeros con decimales
-	// %s para cadenas de texto
-	
-	System.out.printf("Los numeros aleatorios son : %s", Arrays.toString(numeros));
-	
-		boolean encontrado = false;
-		
-		for (int i = 0; i < numeros.length && encontrado == false; i++) {
-			if (numeros[i]== NUM_ENCON) {
-				encontrado = true;
-			}
+		public static int tamaño(int tamaño) {
+			System.out.println("Introduce un numero :");
+			tamaño =Integer.parseInt(sc.nextLine());
+			sc.close();
+			return tamaño;
 		}
-		if(encontrado == true)
-		System.out.printf("El elemento %d: ha sido encontrado en el array : ", NUM_ENCON);
-		
-		else {
+		public static void main(String[] args) {
+			Random aleatorio; 
+			aleatorio = new Random();
 			
-		System.out.printf("El elemento %d: ha sido encontrado en el array : ", NUM_ENCON);
+			int[] aleator = new int[tamaño(0)];
+			
+			for (int i = 0; i < aleator.length; i++) {
+				
+				aleator[i] = aleatorio.nextInt(NUM_FINAL);
 		}
+			System.out.printf("Los números aleatorios son :%s :" , Arrays.toString(aleator));
 	}
-}
+}		
